@@ -1,1 +1,10 @@
-
+name: ColorArmour
+author: remote_vase
+version: 1.0.0dev#1
+api: [1.0.0, 2.0.0, 3.0.0]
+main: ColorArmour\ColorArmour
+load: POSTWORLD
+commands:
+  setrank:
+    usage: /setrank [rank] [player]
+    description: Set a players rank to VIP, VIP+, YouTuber, or Other. More rank features coming soon
