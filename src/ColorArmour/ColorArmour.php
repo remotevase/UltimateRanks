@@ -6,7 +6,7 @@ use pocketmine\event\Listener;
 use pocketmine\Player;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\item\Item;
-class Main extends PluginBase implements Listener {
+class ColorArmour extends PluginBase implements Listener {
   public function onEnable() {
     $this->saveResource("VIP.yml");
     $vip = yaml_parse(file_get_contents($this->getDataFolder() . "VIP.yml"));
