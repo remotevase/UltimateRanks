@@ -113,7 +113,7 @@ public function onCommand(CommandSender $player, Command $cmd, $label, array $ar
 	{
 		$player = $event->getPlayer();
 		$message = $event->getMessage();
-		$config = new Config($this->getDataFolder() . "/rank.yml", Config::YAML);
+		$config2 = new Config($this->getDataFolder() . "/rank.yml", Config::YAML);
 		$rank = "[RegularUser]";
 		if($config->get($player->getName()) != null)
 		{
