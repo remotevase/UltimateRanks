@@ -61,6 +61,11 @@ class ColorArmour extends PluginBase implements Listener {
       return Item::get(0);
     }
   }
+  
+  #Leather Head = 298
+  #Leather Chest = 299
+  #Leather Legs = 300
+  #Leather Boots = 301
 public function onCommand(CommandSender $player, Command $cmd, $label, array $args) {
         switch($cmd->getName()){
           case "setrank":
