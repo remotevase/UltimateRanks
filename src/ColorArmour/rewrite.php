@@ -1,6 +1,6 @@
 <?php
 
-namespace ColorArmour;
+namespace UltimateRanks;
 
 use pocketmine\command\{Command, CommandSender, ConsoleCommandSender};
 use pocketmine\plugin\PluginBase;
@@ -10,11 +10,11 @@ use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\item\Item;
 use pocketmine\utils\TextFormat as C;
 
-class ColorArmour extends PluginBase implements Listener {
+class UltimateRanks extends PluginBase implements Listener {
 
   public function onEnable() {
     $this->getServer()->getPluginManager()->registerEvents($this ,$this);
-		$this->getLogger()->info(C::GREEN . "ColorArmour Loaded!");
+		$this->getLogger()->info(C::GREEN . "UltimateRanks Loaded!");
 		@mkdir($this->getDataFolder());
 		  $youtuber = new Config($this->getDataFolder() . "/rank.yml", Config::YAML);
         $youtuber->save();
@@ -72,3 +72,28 @@ class ColorArmour extends PluginBase implements Listener {
     			$feet = $this->VPFeet
     			$color = $this->CLVP
     		}else if($rank == "[VIP+]"){
+    			$head = $this->VPLHead
+    			$chest = $this->VPLChest
+    			$legs = $this->VPLLegs
+    			$feet = $this->VPLFeet
+    			$color = $this->CLVPL
+    		}else if($rank == "[Other User]"){
+    			$head = $this->OTHead
+    			$chest = $this->OTChest
+    			$legs = $this->OTLegs
+    			$feet = $this->OTFeet
+    			$color = $this->CLOT
+    		}else if($rank == "[Youtuber]"){
+    			$head = $this->YTHead
+    			$chest = $this->YTChest
+    			$legs = $this->YTLegs
+    			$feet = $this->YTFeet
+    			$color = $this->CLYT
+    		}else if($rank != null){
+    			$head = $this->RUHead
+    			$chest = $this->RUChest
+    			$legs = $this->RULegs
+    			$feet = $this->RUFeet
+    			$color = $this->CLRU
+    		}
+    	}
