@@ -77,6 +77,13 @@ class UltimateRanks extends PluginBase implements Listener {
     			$legs1 = $this->VPLegs
     			$feet1 = $this->VPFeet
     			$color = $this->CLVP
+    			if ($head1 == "ON"){
+				#$chestPlate = Item::get(299);
+				#$tempTag = new CompoundTag("", []);
+				#$tempTag->customColor = new IntTag("customColor", $customColor);
+				#$chestPlate->setCompoundTag($tempTag);
+				#$player->getInventory()->setChestplate($chestPlate);
+			}
     		}else if($rank == "[VIP+]"){
     			$head1 = $this->VPLHead
     			$chest1 = $this->VPLChest
@@ -102,7 +109,5 @@ class UltimateRanks extends PluginBase implements Listener {
     			$feet1 = $this->RUFeet
     			$color = $this->CLRU
     		}
-    	if ($head1 = on){
-    		$head = ""	
     	}
-    }
+}
