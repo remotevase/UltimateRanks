@@ -97,3 +97,6 @@ class UltimateRanks extends PluginBase implements Listener {
     			$color = $this->CLRU
     		}
     	}
+#   public function onSpawn(PlayerRespawnEvent $event) {
+#       $p = $event->getPlayer();{
+#       	$sender->getInventory()->addItem(Item::get($item));
