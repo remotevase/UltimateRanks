@@ -1,5 +1,5 @@
-# ColorArmour
-ColorArmour is a simple plugin that gives people armour when they join based on their rank. Then, based on their rank, the armour will be a certain color. This is a rank and item join plugin all in one.
+# UltimateRanks
+UltimateRanks (formally called ColorArmour in dev#1) is a simple plugin that gives people armour when they join based on their rank. Then, based on their rank, the armour will be a certain color. This is a rank and item join plugin all in one.
 
 People's names go with ranks, Ranks go with colored armour, on player join, the player gets armour (configured in config!)
 
