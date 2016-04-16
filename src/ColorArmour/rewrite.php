@@ -56,10 +56,9 @@ class ColorArmour extends PluginBase implements Listener {
     $this->VPLLegs = $viplus->get("Pants")
     $this->VPLFeet = $viplus->get("Boots")
     
-    $this->CLYT = #$vip->get("Helmet")
-    $this->CLRU = #$vip->get("Chestplate")
-    $this->CLOT = #$vip->get("Pants")
-    $this->CLVP = #$vip->get("Boots")
-    $this->CLVPL = #$vip->get("Boots")
-    
+    $this->CLYT = $colors->get("YoutuberColor")
+    $this->CLRU = $colors->get("RegularUserColor")
+    $this->CLOT = $colors->get("OthersColor")
+    $this->CLVP = $colors->get("VIPColor")
+    $this->CLVPL = $colors->get("VIP+Color")
   }
