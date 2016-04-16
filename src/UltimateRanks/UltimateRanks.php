@@ -64,39 +64,45 @@ class UltimateRanks extends PluginBase implements Listener {
     
     $rank = $ranks->get($player->getName());
     }
-    	public function getArmour(){
+	public function onSpawn(PlayerRespawnEvent $event) {
+    		$p = $event->getPlayer();{
+    			return $this->doAll();
+    		$p->sendMessage(C::GREEN."You have recieved the kit for your rank!");
+    			}
+		}
+    	public function doAll(){
     		if($rank == "[VIP]"){
-    			$head = $this->VPHead
-    			$chest = $this->VPChest
-    			$legs = $this->VPLegs
-    			$feet = $this->VPFeet
+    			$head1 = $this->VPHead
+    			$chest1 = $this->VPChest
+    			$legs1 = $this->VPLegs
+    			$feet1 = $this->VPFeet
     			$color = $this->CLVP
     		}else if($rank == "[VIP+]"){
-    			$head = $this->VPLHead
-    			$chest = $this->VPLChest
-    			$legs = $this->VPLLegs
-    			$feet = $this->VPLFeet
+    			$head1 = $this->VPLHead
+    			$chest1 = $this->VPLChest
+    			$legs1 = $this->VPLLegs
+    			$feet1 = $this->VPLFeet
     			$color = $this->CLVPL
     		}else if($rank == "[Other User]"){
-    			$head = $this->OTHead
-    			$chest = $this->OTChest
-    			$legs = $this->OTLegs
-    			$feet = $this->OTFeet
+    			$head1 = $this->OTHead
+    			$chest1 = $this->OTChest
+    			$legs1 = $this->OTLegs
+    			$feet1 = $this->OTFeet
     			$color = $this->CLOT
     		}else if($rank == "[Youtuber]"){
-    			$head = $this->YTHead
-    			$chest = $this->YTChest
-    			$legs = $this->YTLegs
-    			$feet = $this->YTFeet
+    			$head1 = $this->YTHead
+    			$chest1 = $this->YTChest
+    			$legs1 = $this->YTLegs
+    			$feet1 = $this->YTFeet
     			$color = $this->CLYT
     		}else if($rank != null){
-    			$head = $this->RUHead
-    			$chest = $this->RUChest
-    			$legs = $this->RULegs
-    			$feet = $this->RUFeet
+    			$head1 = $this->RUHead
+    			$chest1 = $this->RUChest
+    			$legs1 = $this->RULegs
+    			$feet1 = $this->RUFeet
     			$color = $this->CLRU
     		}
+    	if ($head1 = on){
+    		$head = ""	
     	}
-#   public function onSpawn(PlayerRespawnEvent $event) {
-#       $p = $event->getPlayer();{
-#       	$sender->getInventory()->addItem(Item::get($item));
+    }
