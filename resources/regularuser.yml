@@ -1,0 +1,8 @@
+#Format: <body part> : <ON/OFF>
+#If on, the player with that rank will recieve armour on that body part
+#Options for <body part>: Helmet, Chestplate, Pants, Boots
+
+Helmet: OFF
+Chestplate: OFF
+Pants: OFF
+Boots: ON
