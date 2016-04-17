@@ -10,3 +10,6 @@ Players could recieve $items when they join. $items is whatever you specify in c
 @Taki21 you would be good at this, but I wanna get it off the ground myself first
 
 # THIS PLUGIN HAS OFFICIALLY BEEN STARRED TWICE!!!!!!!!!!!
+
+Version 2.0 will have
+  Items on join, customizeable in a config
