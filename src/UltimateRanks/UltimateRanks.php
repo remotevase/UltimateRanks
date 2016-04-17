@@ -26,7 +26,7 @@ class UltimateRanks extends PluginBase implements Listener {
         $vip->save();
       $viplus = new Config($this->getDataFolder() . "/vip+.yml", Config::YAML);
         $viplus->save();
-      $ranks = new Config($this->getDataFolder() . "/rank.yml", Config::YAML);
+      $ranks = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
         $ranks->save();
       $colors = new Config($this->getDataFolder() . "/colors.yml", Config::YAML);
         $colors->save();
