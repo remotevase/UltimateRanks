@@ -8,3 +8,5 @@ Upcoming Features:
 Players could recieve $items when they join. $items is whatever you specify in config
 
 @Taki21 you would be good at this, but I wanna get it off the ground myself first
+
+# THIS PLUGIN HAS OFFICIALLY BEEN STARRED TWICE!!!!!!!!!!!
