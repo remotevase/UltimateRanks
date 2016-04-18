@@ -63,12 +63,12 @@ class UltimateRanks extends PluginBase implements Listener {
     $this->CLVP = $colors->get("VIPColor");
     $this->CLVPL = $colors->get("VIP+Color");
     
-    $rank = $ranks->get($player->getName());
     }
 	public function onSpawn(PlayerRespawnEvent $event) {
     		$p = $event->getPlayer();{
     			return $this->doAll();
     		$p->sendMessage(C::GREEN."You have recieved the kit for your rank!");
+    		$rank = $ranks->get($p->getName());
     			}
 		}
     	public function doAll(){
