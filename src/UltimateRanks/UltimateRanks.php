@@ -72,11 +72,11 @@ class UltimateRanks extends PluginBase implements Listener {
 		}
     	public function doAll(){
     		if($rank == "[VIP]"){
-    			$head1 = $this->VPHead
-    			$chest1 = $this->VPChest
-    			$legs1 = $this->VPLegs
-    			$feet1 = $this->VPFeet
-    			$color = $this->CLVP
+    			$head1 = $this->VPHead;
+    			$chest1 = $this->VPChest;
+    			$legs1 = $this->VPLegs;
+    			$feet1 = $this->VPFeet;
+    			$color = $this->CLVP;
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
@@ -114,11 +114,11 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet = Item::get(0)
 			}
     		}else if($rank == "[VIP+]"){
-    			$head1 = $this->VPLHead
-    			$chest1 = $this->VPLChest
-    			$legs1 = $this->VPLLegs
-    			$feet1 = $this->VPLFeet
-    			$color = $this->CLVPL
+    			$head1 = $this->VPLHead;
+    			$chest1 = $this->VPLChest;
+    			$legs1 = $this->VPLLegs;
+    			$feet1 = $this->VPLFeet;
+    			$color = $this->CLVPL;
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
@@ -156,11 +156,11 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet = Item::get(0)
 			}
     		}else if($rank == "[Other User]"){
-    			$head1 = $this->OTHead
-    			$chest1 = $this->OTChest
-    			$legs1 = $this->OTLegs
-    			$feet1 = $this->OTFeet
-    			$color = $this->CLOT
+    			$head1 = $this->OTHead;
+    			$chest1 = $this->OTChest;
+    			$legs1 = $this->OTLegs;
+    			$feet1 = $this->OTFeet;
+    			$color = $this->CLOT;
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
@@ -198,11 +198,11 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet = Item::get(0)
 			}
     		}else if($rank == "[Youtuber]"){
-    			$head1 = $this->YTHead
-    			$chest1 = $this->YTChest
-    			$legs1 = $this->YTLegs
-    			$feet1 = $this->YTFeet
-    			$color = $this->CLYT
+    			$head1 = $this->YTHead;
+    			$chest1 = $this->YTChest;
+    			$legs1 = $this->YTLegs;
+    			$feet1 = $this->YTFeet;
+    			$color = $this->CLYT;
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
@@ -240,11 +240,11 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet = Item::get(0)
 			}
     		}else if($rank != null){
-    			$head1 = $this->RUHead
-    			$chest1 = $this->RUChest
-    			$legs1 = $this->RULegs
-    			$feet1 = $this->RUFeet
-    			$color = $this->CLRU
+    			$head1 = $this->RUHead;
+    			$chest1 = $this->RUChest;
+    			$legs1 = $this->RULegs;
+    			$feet1 = $this->RUFeet;
+    			$color = $this->CLRU;
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
