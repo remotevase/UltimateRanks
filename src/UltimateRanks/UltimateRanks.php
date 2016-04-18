@@ -84,7 +84,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$head->setCompoundTag($tempTag);
 				$player->getInventory()->setHelmet($head);
 			}else{
-				$head = Item::get(0)
+				$head = Item::get(0);
 			}
 			if ($chest1 == "ON"){
 				$chest = Item::get(298);
@@ -93,7 +93,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$chest->setCompoundTag($tempTag);
 				$player->getInventory()->setChestplate($chest);
 			}else{
-				$chest = Item::get(0)
+				$chest = Item::get(0);
 			}
 			if ($legs1 == "ON"){
 				$legs = Item::get(298);
@@ -102,7 +102,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$legs->setCompoundTag($tempTag);
 				$player->getInventory()->setLeggings($legs);
 			}else{
-				$legs = Item::get(0)
+				$legs = Item::get(0);
 			}
 			if ($feet1 == "ON"){
 				$feet = Item::get(298);
@@ -111,7 +111,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet->setCompoundTag($tempTag);
 				$player->getInventory()->setBoots($feet);
 			}else{
-				$feet = Item::get(0)
+				$feet = Item::get(0);
 			}
     		}else if($rank == "[VIP+]"){
     			$head1 = $this->VPLHead;
@@ -126,7 +126,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$head->setCompoundTag($tempTag);
 				$player->getInventory()->setHelmet($head);
 			}else{
-				$head = Item::get(0)
+				$head = Item::get(0);
 			}
 			if ($chest1 == "ON"){
 				$chest = Item::get(298);
@@ -135,7 +135,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$chest->setCompoundTag($tempTag);
 				$player->getInventory()->setChestplate($chest);
 			}else{
-				$chest = Item::get(0)
+				$chest = Item::get(0);
 			}
 			if ($legs1 == "ON"){
 				$legs = Item::get(298);
@@ -144,7 +144,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$legs->setCompoundTag($tempTag);
 				$player->getInventory()->setLeggings($legs);
 			}else{
-				$legs = Item::get(0)
+				$legs = Item::get(0);
 			}
 			if ($feet1 == "ON"){
 				$feet = Item::get(298);
@@ -153,7 +153,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet->setCompoundTag($tempTag);
 				$player->getInventory()->setBoots($feet);
 			}else{
-				$feet = Item::get(0)
+				$feet = Item::get(0);
 			}
     		}else if($rank == "[Other User]"){
     			$head1 = $this->OTHead;
@@ -168,7 +168,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$head->setCompoundTag($tempTag);
 				$player->getInventory()->setHelmet($head);
 			}else{
-				$head = Item::get(0)
+				$head = Item::get(0);
 			}
 			if ($chest1 == "ON"){
 				$chest = Item::get(298);
@@ -177,7 +177,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$chest->setCompoundTag($tempTag);
 				$player->getInventory()->setChestplate($chest);
 			}else{
-				$chest = Item::get(0)
+				$chest = Item::get(0);
 			}
 			if ($legs1 == "ON"){
 				$legs = Item::get(298);
@@ -186,7 +186,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$legs->setCompoundTag($tempTag);
 				$player->getInventory()->setLeggings($legs);
 			}else{
-				$legs = Item::get(0)
+				$legs = Item::get(0);
 			}
 			if ($feet1 == "ON"){
 				$feet = Item::get(298);
@@ -195,7 +195,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet->setCompoundTag($tempTag);
 				$player->getInventory()->setBoots($feet);
 			}else{
-				$feet = Item::get(0)
+				$feet = Item::get(0);
 			}
     		}else if($rank == "[Youtuber]"){
     			$head1 = $this->YTHead;
@@ -210,7 +210,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$head->setCompoundTag($tempTag);
 				$player->getInventory()->setHelmet($head);
 			}else{
-				$head = Item::get(0)
+				$head = Item::get(0);
 			}
 			if ($chest1 == "ON"){
 				$chest = Item::get(298);
@@ -219,7 +219,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$chest->setCompoundTag($tempTag);
 				$player->getInventory()->setChestplate($chest);
 			}else{
-				$chest = Item::get(0)
+				$chest = Item::get(0);
 			}
 			if ($legs1 == "ON"){
 				$legs = Item::get(298);
@@ -228,7 +228,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$legs->setCompoundTag($tempTag);
 				$player->getInventory()->setLeggings($legs);
 			}else{
-				$legs = Item::get(0)
+				$legs = Item::get(0);
 			}
 			if ($feet1 == "ON"){
 				$feet = Item::get(298);
@@ -237,7 +237,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet->setCompoundTag($tempTag);
 				$player->getInventory()->setBoots($feet);
 			}else{
-				$feet = Item::get(0)
+				$feet = Item::get(0);
 			}
     		}else if($rank != null){
     			$head1 = $this->RUHead;
@@ -252,7 +252,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$head->setCompoundTag($tempTag);
 				$player->getInventory()->setHelmet($head);
 			}else{
-				$head = Item::get(0)
+				$head = Item::get(0);
 			}
 			if ($chest1 == "ON"){
 				$chest = Item::get(298);
@@ -261,7 +261,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$chest->setCompoundTag($tempTag);
 				$player->getInventory()->setChestplate($chest);
 			}else{
-				$chest = Item::get(0)
+				$chest = Item::get(0);
 			}
 			if ($legs1 == "ON"){
 				$legs = Item::get(298);
@@ -270,7 +270,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$legs->setCompoundTag($tempTag);
 				$player->getInventory()->setLeggings($legs);
 			}else{
-				$legs = Item::get(0)
+				$legs = Item::get(0);
 			}
 			if ($feet1 == "ON"){
 				$feet = Item::get(298);
@@ -279,7 +279,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet->setCompoundTag($tempTag);
 				$player->getInventory()->setBoots($feet);
 			}else{
-				$feet = Item::get(0)
+				$feet = Item::get(0);
 			}
     		}
     	}
