@@ -31,7 +31,7 @@ class UltimateRanks extends PluginBase implements Listener {
         $ranks->save();
       $colors = new Config($this->getDataFolder() . "/colors.yml", Config::YAML);
         $colors->save();
-    $this->getLogger()->info(C::YELLOW . "ColorArmour Configs Saved!");
+    $this->getLogger()->info(C::YELLOW . "UltimateRanks Configs Saved!");
     $this->YTHead = $youtuber->get("Helmet");
     $this->YTChest = $youtuber->get("Chestplate");
     $this->YTLegs = $youtuber->get("Pants");
