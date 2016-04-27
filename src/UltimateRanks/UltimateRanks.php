@@ -13,65 +13,71 @@ use pocketmine\utils\Config;
 
 class UltimateRanks extends PluginBase implements Listener {
 
-  public function onEnable() {
-    $this->getServer()->getPluginManager()->registerEvents($this ,$this);
+  	public function onEnable() {
+		$this->getServer()->getPluginManager()->registerEvents($this ,$this);
 		$this->getLogger()->info(C::GREEN . "UltimateRanks Loaded!");
+		
+		$this->saveResource("youtuber.yml");
+		$this->saveResource("regularuser.yml");
+		$this->saveResource("others.yml");
+		$this->saveResource("vip.yml");
+		$this->saveResource("vip+.yml");
+		$this->saveResource("ranks.yml");
+		$this->saveResource("colors.yml");
+		
 		@mkdir($this->getDataFolder());
-		  $youtuber = new Config($this->getDataFolder() . "youtuber.yml", Config::YAML);
-        $youtuber->save();
-      $regularuser = new Config($this->getDataFolder() . "regularuser.yml", Config::YAML);
-        $regularuser->save();
-      $others = new Config($this->getDataFolder() . "others.yml", Config::YAML);
-        $others->save();
-      $vip = new Config($this->getDataFolder() . "vip.yml", Config::YAML);
-        $vip->save();
-      $viplus = new Config($this->getDataFolder() . "vip+.yml", Config::YAML);
-        $viplus->save();
-      $ranks = new Config($this->getDataFolder() . "ranks.yml", Config::YAML);
-        $ranks->save();
-      $colors = new Config($this->getDataFolder() . "colors.yml", Config::YAML);
-        $colors->save();
-    $this->getLogger()->info(C::YELLOW . "UltimateRanks Configs Saved!");
-    $this->YTHead = $youtuber->get("Helmet");
-    $this->YTChest = $youtuber->get("Chestplate");
-    $this->YTLegs = $youtuber->get("Pants");
-    $this->YTFeet = $youtuber->get("Boots");
+		
+		$youtuber = new Config($this->getDataFolder() . "youtuber.yml", Config::YAML);
+      		$regularuser = new Config($this->getDataFolder() . "regularuser.yml", Config::YAML);
+      		$others = new Config($this->getDataFolder() . "others.yml", Config::YAML);
+      		$vip = new Config($this->getDataFolder() . "vip.yml", Config::YAML);
+      		$viplus = new Config($this->getDataFolder() . "vip+.yml", Config::YAML);
+		$ranks = new Config($this->getDataFolder() . "ranks.yml", Config::YAML);
+      		$colors = new Config($this->getDataFolder() . "colors.yml", Config::YAML);
+      		
+    		$this->getLogger()->info(C::YELLOW . "UltimateRanks Configs Saved!");
+    		
+    		$this->YTHead = $youtuber->get("Helmet");
+    		$this->YTChest = $youtuber->get("Chestplate");
+    		$this->YTLegs = $youtuber->get("Pants");
+    		$this->YTFeet = $youtuber->get("Boots");
     
-    $this->RUHead = $regularuser->get("Helmet");
-    $this->RUChest = $regularuser->get("Chestplate");
-    $this->RULegs = $regularuser->get("Pants");
-    $this->RUFeet = $regularuser->get("Boots");
+    		$this->RUHead = $regularuser->get("Helmet");
+    		$this->RUChest = $regularuser->get("Chestplate");
+    		$this->RULegs = $regularuser->get("Pants");
+    		$this->RUFeet = $regularuser->get("Boots");
     
-    $this->OTHead = $others->get("Helmet");
-    $this->OTChest = $others->get("Chestplate");
-    $this->OTLegs = $others->get("Pants");
-    $this->OTFeet = $others->get("Boots");
+    		$this->OTHead = $others->get("Helmet");
+    		$this->OTChest = $others->get("Chestplate");
+    		$this->OTLegs = $others->get("Pants");
+    		$this->OTFeet = $others->get("Boots");
     
-    $this->VPHead = $vip->get("Helmet");
-    $this->VPChest = $vip->get("Chestplate");
-    $this->VPLegs = $vip->get("Pants");
-    $this->VPFeet = $vip->get("Boots");
+    		$this->VPHead = $vip->get("Helmet");
+    		$this->VPChest = $vip->get("Chestplate");
+    		$this->VPLegs = $vip->get("Pants");
+    		$this->VPFeet = $vip->get("Boots");
     
-    $this->VPLHead = $viplus->get("Helmet");
-    $this->VPLChest = $viplus->get("Chestplate");
-    $this->VPLLegs = $viplus->get("Pants");
-    $this->VPLFeet = $viplus->get("Boots");
+    		$this->VPLHead = $viplus->get("Helmet");
+    		$this->VPLChest = $viplus->get("Chestplate");
+    		$this->VPLLegs = $viplus->get("Pants");
+    		$this->VPLFeet = $viplus->get("Boots");
     
-    $this->CLYT = $colors->get("YoutuberColor");
-    $this->CLRU = $colors->get("RegularUserColor");
-    $this->CLOT = $colors->get("OthersColor");
-    $this->CLVP = $colors->get("VIPColor");
-    $this->CLVPL = $colors->get("VIP+Color");
+    		$this->CLYT = $colors->get("YoutuberColor");
+    		$this->CLRU = $colors->get("RegularUserColor");
+    		$this->CLOT = $colors->get("OthersColor");
+    		$this->CLVP = $colors->get("VIPColor");
+    		$this->CLVPL = $colors->get("VIP+Color");
     
-    }
+    	}
+    	
 	public function onSpawn(PlayerRespawnEvent $event) {
-    		$p = $event->getPlayer();{
-    			return $this->doAll();
+    		$p = $event->getPlayer();
+    		$p->doAll();
     		$p->sendMessage(C::GREEN."You have recieved the kit for your rank!");
     		$rank = $ranks->get($p->getName());
-    			}
-		}
-    	public function doAll(){
+	}
+	
+    	public function doAll(Player $player){
     		if($rank == "[VIP]"){
     			$head1 = $this->VPHead;
     			$chest1 = $this->VPChest;
