@@ -1,6 +1,6 @@
 name: UltimateRanks
 author: remote_vase
-version: 1.0.0dev2
+version: 1.0.0
 api: [1.0.0, 2.0.0, 3.0.0]
 main: UltimateRanks\UltimateRanks
 load: POSTWORLD
