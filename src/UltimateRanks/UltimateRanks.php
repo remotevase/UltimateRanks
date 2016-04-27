@@ -15,7 +15,7 @@ class UltimateRanks extends PluginBase implements Listener {
 
   	public function onEnable() {
 		$this->getServer()->getPluginManager()->registerEvents($this ,$this);
-		$this->getLogger()->info(C::GREEN . "UltimateRanks Loaded!");
+		$this->getLogger()->info(C::GREEN . "UltimateRanks Version 1 Loaded!");
 		
 		$this->saveResource("youtuber.yml");
 		$this->saveResource("regularuser.yml");
