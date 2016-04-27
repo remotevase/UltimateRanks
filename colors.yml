@@ -1,0 +1,11 @@
+#Format: <rankname>Color : <decimal color value>
+#To get the decimal color value do the below
+#Go to the website below to get the decimal colors. 
+#The decimal color is what you put below. The color mixer on that page is recommended
+#The website: https://www.mathsisfun.com/hexadecimal-decimal-colors.html
+
+YoutuberColor: 6618880
+RegularUserColor: 9541888
+OthersColor: 16711680
+VIPColor: 0
+VIP+Color: 16773888
