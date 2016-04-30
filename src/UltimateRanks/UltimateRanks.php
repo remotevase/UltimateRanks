@@ -72,6 +72,7 @@ class UltimateRanks extends PluginBase implements Listener {
     	
    	public function doAll(Player $player, PlayerRespawnEvent $event){
     		$p = $event->getPlayer();
+    		$ranks = new Config($this->getDataFolder() . "ranks.yml", Config::YAML);
     		$rank = $ranks->get($p->getName());
     		if($rank == "[VIP]"){
     			$p->sendMessage(C::GREEN."You have recieved the VIP kit!");
