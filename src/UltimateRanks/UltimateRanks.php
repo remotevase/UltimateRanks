@@ -70,15 +70,11 @@ class UltimateRanks extends PluginBase implements Listener {
     
     	}
     	
-	public function onSpawn(PlayerRespawnEvent $event) {
+   	public function doAll(Player $player, PlayerRespawnEvent $event){
     		$p = $event->getPlayer();
-    		$p->doAll();
-    		$p->sendMessage(C::GREEN."You have recieved the kit for your rank!");
     		$rank = $ranks->get($p->getName());
-	}
-	
-    	public function doAll(Player $player){
     		if($rank == "[VIP]"){
+    			$p->sendMessage(C::GREEN."You have recieved the VIP kit!");
     			$head1 = $this->VPHead;
     			$chest1 = $this->VPChest;
     			$legs1 = $this->VPLegs;
@@ -121,6 +117,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet = Item::get(0);
 			}
     		}else if($rank == "[VIP+]"){
+    			$p->sendMessage(C::GREEN."You have recieved the VIP+ kit!");
     			$head1 = $this->VPLHead;
     			$chest1 = $this->VPLChest;
     			$legs1 = $this->VPLLegs;
@@ -163,6 +160,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet = Item::get(0);
 			}
     		}else if($rank == "[Other User]"){
+    			$p->sendMessage(C::GREEN."You have recieved the kit for your rank!");
     			$head1 = $this->OTHead;
     			$chest1 = $this->OTChest;
     			$legs1 = $this->OTLegs;
@@ -205,6 +203,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet = Item::get(0);
 			}
     		}else if($rank == "[Youtuber]"){
+    			$p->sendMessage(C::GREEN."You have recieved the Youtuber kit!");
     			$head1 = $this->YTHead;
     			$chest1 = $this->YTChest;
     			$legs1 = $this->YTLegs;
@@ -247,6 +246,7 @@ class UltimateRanks extends PluginBase implements Listener {
 				$feet = Item::get(0);
 			}
     		}else if($rank != null){
+    			$p->sendMessage(C::GREEN."You have recieved the Regular User kit!");
     			$head1 = $this->RUHead;
     			$chest1 = $this->RUChest;
     			$legs1 = $this->RULegs;
