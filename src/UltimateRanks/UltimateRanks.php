@@ -70,8 +70,9 @@ class UltimateRanks extends PluginBase implements Listener {
     
     	}
     	
-   	public function doAll(Player $player, PlayerRespawnEvent $event){
-    		$p = $event->getPlayer();
+   public function onCommand(CommandSender $p, Command $command, $label, array $args){
+        switch(strtolower($command->getName())){
+            case "kit":
     		$ranks = new Config($this->getDataFolder() . "ranks.yml", Config::YAML);
     		$rank = $ranks->get($p->getName());
     		if($rank == "[VIP]"){
@@ -291,4 +292,5 @@ class UltimateRanks extends PluginBase implements Listener {
 			}
     		}
     	}
+   }
 }
