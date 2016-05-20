@@ -11,5 +11,5 @@ Upcoming Features:
 
 @Taki21 you would be good at this, but I wanna get it off the ground myself first
 
-# THIS PLUGIN HAS OFFICIALLY BEEN STARRED TWICE!!!!!!!!!!!
+# THIS PLUGIN HAS OFFICIALLY BEEN STARRED THRICE!!!!!!!!!!!
 
