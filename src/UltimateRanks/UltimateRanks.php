@@ -75,6 +75,7 @@ class UltimateRanks extends PluginBase implements Listener {
             case "kit":
     		$ranks = new Config($this->getDataFolder() . "ranks.yml", Config::YAML);
     		$rank = $ranks->get($p->getName());
+    		$name = $p->getName();
     		if($rank == "[VIP]"){
     			$p->sendMessage(C::GREEN."You have recieved the VIP kit!");
     			$head1 = $this->VPHead;
@@ -82,6 +83,7 @@ class UltimateRanks extends PluginBase implements Listener {
     			$legs1 = $this->VPLegs;
     			$feet1 = $this->VPFeet;
     			$color = $this->CLVP;
+    			$player->setNameTag(C::GOLD . "[VIP]" . C::WHITE . " " . $name);
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
@@ -125,6 +127,7 @@ class UltimateRanks extends PluginBase implements Listener {
     			$legs1 = $this->VPLLegs;
     			$feet1 = $this->VPLFeet;
     			$color = $this->CLVPL;
+    			$player->setNameTag(C::GOLD . "[VIP+]" . C::WHITE . " " . $name);
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
@@ -168,6 +171,7 @@ class UltimateRanks extends PluginBase implements Listener {
     			$legs1 = $this->OTLegs;
     			$feet1 = $this->OTFeet;
     			$color = $this->CLOT;
+    			$player->setNameTag(C::GOLD . "[Special User]" . C::WHITE . " " . $name);
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
@@ -211,6 +215,7 @@ class UltimateRanks extends PluginBase implements Listener {
     			$legs1 = $this->YTLegs;
     			$feet1 = $this->YTFeet;
     			$color = $this->CLYT;
+    			$player->setNameTag(C::GOLD . "[Youtuber]" . C::WHITE . " " . $name);
     			if ($head1 == "ON"){
 				$head = Item::get(298);
 				$tempTag = new CompoundTag("", []);
