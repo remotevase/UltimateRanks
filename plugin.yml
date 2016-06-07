@@ -4,3 +4,8 @@ version: 1.0.0
 api: [1.0.0, 2.0.0, 3.0.0]
 main: UltimateRanks\UltimateRanks
 load: POSTWORLD
+
+commands:
+ kit:
+  description: Gives the sender their kit based on rank. Cannot be used by console.
+  usage: /kit
