@@ -10,6 +10,8 @@ use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\item\Item;
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
+use pocketmine\event\player\PlayerRespawnEvent;
+use pocketmine\Server;
 
 class UltimateRanks extends PluginBase implements Listener {
 
