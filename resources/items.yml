@@ -2,6 +2,6 @@
 
 # For the ID, use the following website: http://minecraft.gamepedia.com/Pocket_Edition_data_values
 
-items:
+item-list:
 - "268:1:0"
 - "296:32:0"
