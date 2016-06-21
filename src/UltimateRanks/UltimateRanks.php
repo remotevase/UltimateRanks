@@ -26,7 +26,7 @@ class UltimateRanks extends PluginBase implements Listener {
 		$this->saveResource("vip+.yml");
 		$this->saveResource("ranks.yml");
 		$this->saveResource("colors.yml");
-		$this->saveResource("items.yml")
+		$this->saveResource("items.yml");
 		
 		@mkdir($this->getDataFolder());
 		
