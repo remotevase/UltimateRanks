@@ -26,6 +26,7 @@ class UltimateRanks extends PluginBase implements Listener {
 		$this->saveResource("vip+.yml");
 		$this->saveResource("ranks.yml");
 		$this->saveResource("colors.yml");
+		$this->saveResource("items.yml")
 		
 		@mkdir($this->getDataFolder());
 		
@@ -36,8 +37,17 @@ class UltimateRanks extends PluginBase implements Listener {
       		$viplus = new Config($this->getDataFolder() . "vip+.yml", Config::YAML);
 		$ranks = new Config($this->getDataFolder() . "ranks.yml", Config::YAML);
       		$colors = new Config($this->getDataFolder() . "colors.yml", Config::YAML);
+      		$it = new Config($this->getDataFolder() . "items.yml", Config::YAML);
       		
     		$this->getLogger()->info(C::YELLOW . "UltimateRanks Configs Saved!");
+    		
+    		$items = $it->getAll();
+    		$num = 0;
+		 foreach ($items["item-list"] as $i) {
+			$r = explode(":",$i);
+      			$this->itemstogive[$num] = array($r[0],$r[2],$r[1]);
+      			$num++;
+    		}
     		
     		$this->YTHead = $youtuber->get("Helmet");
     		$this->YTChest = $youtuber->get("Chestplate");
@@ -300,4 +310,10 @@ class UltimateRanks extends PluginBase implements Listener {
     		}
     	}
    }
+	public function onJoin(PlayerJoinEvent $event){
+		foreach($this->itemstogive as $i) {
+        		$item = new Item($i[0],$i[2],$i[1]);
+        		$event->getPlayer()->getInventory()->addItem($item);
+      }
+	}
 }
