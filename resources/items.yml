@@ -1,0 +1,7 @@
+# When players spawn, they will be given these items; Format: ID:Amount:Damage
+
+# For the ID, use the following website: http://minecraft.gamepedia.com/Pocket_Edition_data_values
+
+items:
+- "268:1:0"
+- "296:32:0"
