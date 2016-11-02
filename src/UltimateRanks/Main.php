@@ -3,21 +3,28 @@
 namespace UltimateRanks;
 
 use pocketmine\command\{Command, CommandSender, ConsoleCommandSender};
-use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
+use pocketmine\plugin\PluginBase;
+use pocketmine\Server;
 use pocketmine\Player;
+use pocketmine\level\Level;
+use pocketmine\utils\TextFormat as C;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\item\Item;
-use pocketmine\utils\TextFormat as C;
+use pocketmine\level\Position;
 use pocketmine\utils\Config;
-use pocketmine\event\player\PlayerRespawnEvent;
-use pocketmine\Server;
+use pocketmine\tile\Chest;
 
-class UltimateRanks extends PluginBase implements Listener {
+class Main extends PluginBase implements Listener {
 
+	  public function onLoad(){
+    		@mkdir($this->getDataFolder(), 0777);
+	  }
+	
   	public function onEnable() {
 		$this->getServer()->getPluginManager()->registerEvents($this ,$this);
-		$this->getLogger()->info(C::GREEN . "UltimateRanks Version 1 Loaded!");
+		
+		@mkdir($this->getDataFolder(), 0777);
 		
 		$this->saveResource("youtuber.yml");
 		$this->saveResource("regularuser.yml");
@@ -27,8 +34,6 @@ class UltimateRanks extends PluginBase implements Listener {
 		$this->saveResource("ranks.yml");
 		$this->saveResource("colors.yml");
 		$this->saveResource("items.yml");
-		
-		@mkdir($this->getDataFolder());
 		
 		$youtuber = new Config($this->getDataFolder() . "youtuber.yml", Config::YAML);
       		$regularuser = new Config($this->getDataFolder() . "regularuser.yml", Config::YAML);
@@ -79,241 +84,14 @@ class UltimateRanks extends PluginBase implements Listener {
     		$this->CLOT = $colors->get("OthersColor");
     		$this->CLVP = $colors->get("VIPColor");
     		$this->CLVPL = $colors->get("VIP+Color");
-    
+    		
+			$this->getServer()->getCommandMap()->register("kit", new UltimateRanksCommand("kit", $this));
+			$this->getServer()->getCommandMap()->register("kit", new StatsCommand("kit", $this));
+   			$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
+    			$this->getLogger()->info(C::GREEN . "UltimateRanks V2 Beta Enabled!");
     	}
-    	
-   public function onCommand(CommandSender $p, Command $command, $label, array $args){
-        switch(strtolower($command->getName())){
-            case "kit":
-    		$ranks = new Config($this->getDataFolder() . "ranks.yml", Config::YAML);
-    		$rank = $ranks->get($p->getName());
-    		$name = $p->getName();
-    		if($rank == "[VIP]"){
-    			$p->sendMessage(C::GREEN."You have recieved the VIP kit!");
-    			$head1 = $this->VPHead;
-    			$chest1 = $this->VPChest;
-    			$legs1 = $this->VPLegs;
-    			$feet1 = $this->VPFeet;
-    			$color = $this->CLVP;
-    			$player->setNameTag(C::GOLD . "[VIP]" . C::WHITE . " " . $name);
-    			if ($head1 == "ON"){
-				$head = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("VIP Helmet", $color);
-				$head->setCompoundTag($tempTag);
-				$player->getInventory()->setHelmet($head);
-			}else{
-				$head = Item::get(0);
-			}
-			if ($chest1 == "ON"){
-				$chest = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("VIP Chestplate", $color);
-				$chest->setCompoundTag($tempTag);
-				$player->getInventory()->setChestplate($chest);
-			}else{
-				$chest = Item::get(0);
-			}
-			if ($legs1 == "ON"){
-				$legs = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("VIP Leggings", $color);
-				$legs->setCompoundTag($tempTag);
-				$player->getInventory()->setLeggings($legs);
-			}else{
-				$legs = Item::get(0);
-			}
-			if ($feet1 == "ON"){
-				$feet = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("VIP Boots", $color);
-				$feet->setCompoundTag($tempTag);
-				$player->getInventory()->setBoots($feet);
-			}else{
-				$feet = Item::get(0);
-			}
-    		}else if($rank == "[VIP+]"){
-    			$p->sendMessage(C::GREEN."You have recieved the VIP+ kit!");
-    			$head1 = $this->VPLHead;
-    			$chest1 = $this->VPLChest;
-    			$legs1 = $this->VPLLegs;
-    			$feet1 = $this->VPLFeet;
-    			$color = $this->CLVPL;
-    			$player->setNameTag(C::GOLD . "[VIP+]" . C::WHITE . " " . $name);
-    			if ($head1 == "ON"){
-				$head = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("VIP+ Helmet", $color);
-				$head->setCompoundTag($tempTag);
-				$player->getInventory()->setHelmet($head);
-			}else{
-				$head = Item::get(0);
-			}
-			if ($chest1 == "ON"){
-				$chest = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("VIP+ Chestplate", $color);
-				$chest->setCompoundTag($tempTag);
-				$player->getInventory()->setChestplate($chest);
-			}else{
-				$chest = Item::get(0);
-			}
-			if ($legs1 == "ON"){
-				$legs = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("VIP+ Leggings", $color);
-				$legs->setCompoundTag($tempTag);
-				$player->getInventory()->setLeggings($legs);
-			}else{
-				$legs = Item::get(0);
-			}
-			if ($feet1 == "ON"){
-				$feet = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("VIP+ Boots", $color);
-				$feet->setCompoundTag($tempTag);
-				$player->getInventory()->setBoots($feet);
-			}else{
-				$feet = Item::get(0);
-			}
-    		}else if($rank == "[Other User]"){
-    			$p->sendMessage(C::GREEN."You have recieved the kit for your rank!");
-    			$head1 = $this->OTHead;
-    			$chest1 = $this->OTChest;
-    			$legs1 = $this->OTLegs;
-    			$feet1 = $this->OTFeet;
-    			$color = $this->CLOT;
-    			$player->setNameTag(C::GOLD . "[Special User]" . C::WHITE . " " . $name);
-    			if ($head1 == "ON"){
-				$head = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("Other Users Helmet", $color);
-				$head->setCompoundTag($tempTag);
-				$player->getInventory()->setHelmet($head);
-			}else{
-				$head = Item::get(0);
-			}
-			if ($chest1 == "ON"){
-				$chest = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("Other Users Chestplate", $color);
-				$chest->setCompoundTag($tempTag);
-				$player->getInventory()->setChestplate($chest);
-			}else{
-				$chest = Item::get(0);
-			}
-			if ($legs1 == "ON"){
-				$legs = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("Other Users Leggings", $color);
-				$legs->setCompoundTag($tempTag);
-				$player->getInventory()->setLeggings($legs);
-			}else{
-				$legs = Item::get(0);
-			}
-			if ($feet1 == "ON"){
-				$feet = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("Other Users Boots", $color);
-				$feet->setCompoundTag($tempTag);
-				$player->getInventory()->setBoots($feet);
-			}else{
-				$feet = Item::get(0);
-			}
-    		}else if($rank == "[Youtuber]"){
-    			$p->sendMessage(C::GREEN."You have recieved the Youtuber kit!");
-    			$head1 = $this->YTHead;
-    			$chest1 = $this->YTChest;
-    			$legs1 = $this->YTLegs;
-    			$feet1 = $this->YTFeet;
-    			$color = $this->CLYT;
-    			$player->setNameTag(C::GOLD . "[Youtuber]" . C::WHITE . " " . $name);
-    			if ($head1 == "ON"){
-				$head = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("Youtuber Helmet", $color);
-				$head->setCompoundTag($tempTag);
-				$player->getInventory()->setHelmet($head);
-			}else{
-				$head = Item::get(0);
-			}
-			if ($chest1 == "ON"){
-				$chest = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("Youtuber Chestplate", $color);
-				$chest->setCompoundTag($tempTag);
-				$player->getInventory()->setChestplate($chest);
-			}else{
-				$chest = Item::get(0);
-			}
-			if ($legs1 == "ON"){
-				$legs = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("Youtuber Leggings", $color);
-				$legs->setCompoundTag($tempTag);
-				$player->getInventory()->setLeggings($legs);
-			}else{
-				$legs = Item::get(0);
-			}
-			if ($feet1 == "ON"){
-				$feet = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("Youtuber Boots", $color);
-				$feet->setCompoundTag($tempTag);
-				$player->getInventory()->setBoots($feet);
-			}else{
-				$feet = Item::get(0);
-			}
-    		}else if($rank != null){
-    			$p->sendMessage(C::GREEN."You have recieved the Regular User kit!");
-    			$head1 = $this->RUHead;
-    			$chest1 = $this->RUChest;
-    			$legs1 = $this->RULegs;
-    			$feet1 = $this->RUFeet;
-    			$color = $this->CLRU;
-    			if ($head1 == "ON"){
-				$head = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("User Helmet", $color);
-				$head->setCompoundTag($tempTag);
-				$player->getInventory()->setHelmet($head);
-			}else{
-				$head = Item::get(0);
-			}
-			if ($chest1 == "ON"){
-				$chest = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("User Chestplate", $color);
-				$chest->setCompoundTag($tempTag);
-				$player->getInventory()->setChestplate($chest);
-			}else{
-				$chest = Item::get(0);
-			}
-			if ($legs1 == "ON"){
-				$legs = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("User Leggings", $color);
-				$legs->setCompoundTag($tempTag);
-				$player->getInventory()->setLeggings($legs);
-			}else{
-				$legs = Item::get(0);
-			}
-			if ($feet1 == "ON"){
-				$feet = Item::get(298);
-				$tempTag = new CompoundTag("", []);
-				$tempTag->customColor = new IntTag("User Boots", $color);
-				$feet->setCompoundTag($tempTag);
-				$player->getInventory()->setBoots($feet);
-			}else{
-				$feet = Item::get(0);
-			}
-    		}
-    	}
-   }
-	public function onJoin(PlayerJoinEvent $event){
-		foreach($this->itemstogive as $i) {
-        		$item = new Item($i[0],$i[2],$i[1]);
-        		$event->getPlayer()->getInventory()->addItem($item);
-      }
-	}
+    	public function onDisable(){
+    $this->refreshArenas();
+    $this->saveData();
+  }  	
 }
